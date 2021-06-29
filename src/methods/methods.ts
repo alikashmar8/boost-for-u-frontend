@@ -1,5 +1,5 @@
-import { UserRole } from '../enums/userRoles.enum';
 import { User } from '../models/user.model';
+import {UserRole} from "../enums/userRoles.enum";
 
 export function setHeaders(access_token: string) {
   return {
@@ -25,7 +25,7 @@ export function numbersOnly(event: KeyboardEvent): boolean {
   return true;
 }
 
-export function isEmail(email) {
+export function isEmail(email: string) {
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 }
