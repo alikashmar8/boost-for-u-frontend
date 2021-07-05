@@ -325,6 +325,8 @@ header .navbar {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  box-shadow:inset 0px -50px 100px 1px;
+
 }
 
 .banner-item-02 {
@@ -348,10 +350,10 @@ header .navbar {
 }
 
 .banner .text-content {
-  position: absolute;
-  top: 50%;
+  /* position: absolute; */
+  /* top: 50%; */
   transform: translateY(-50%);
-  text-align: center;
+  text-align: start;
   width: 100%;
 }
 
@@ -805,11 +807,11 @@ footer .inner-content p a {
   margin-bottom: 30px;
 }
 
-.find-us h4 {
+/* .find-us h4 {
   font-size: 17px;
   color: #1a6692;
   margin-bottom: 20px;
-}
+} */
 
 .find-us .left-content {
   margin-left: 30px;
@@ -854,7 +856,7 @@ footer .inner-content p a {
   border: 1px solid #eee;
 }
 
-.contact-form button.filled-button {
+/* .contact-form button.filled-button {
   background-color: #3fabf3;
   color: #fff;
   font-size: 14px;
@@ -867,7 +869,7 @@ footer .inner-content p a {
   border: none;
   outline: none;
   cursor: pointer;
-}
+} */
 
 .contact-form button.filled-button:hover {
   background-color: #121212;
@@ -878,21 +880,21 @@ footer .inner-content p a {
   margin-left: 30px;
 }
 
-.accordion a {
+/* .accordion a {
   cursor: pointer;
   font-size: 17px;
   color: #1a6692 !important;
   margin-bottom: 20px;
-  transition: all 0.3s;
-}
-
+  transition: all 0.3s; */
+/* } */
+/*
 .accordion a:hover {
   color: #3fabf3 !important;
 }
 
 .accordion a.active {
   color: #3fabf3 !important;
-}
+} */
 
 .accordion li .content {
   display: none;
@@ -1084,4 +1086,14 @@ footer .inner-content p a {
 .hover-button:hover:after {
   opacity: 1;
   right: 10px;
+}
+
+.main-blue{
+  background-color: #3fabf3!important;
+  color: #fff!important;
+}
+
+.main-blue2{
+  background-color: #3c93bb!important;
+  color: #fff!important;
 }

@@ -158,3 +158,8 @@
     margin-bottom: 30px;
   }
 }
+
+ngb-rating {
+  color: #000 ;
+  font-size: 20px;
+}

@@ -1,25 +1,64 @@
 <div class="container">
-            <div class="product-grid">
-                <div class="product-image">
-                    <a href="#" class="image">
-                        <img class="pic-1" src="http://placehold.it/360X540">
-                        <img class="pic-2" src="http://placehold.it/360X540">
-                    </a>
-                    <!-- <span class="product-sale-label">hot</span> -->
-                    <span class="product-discount-label text-uppercase">Sold Out</span>
-                </div>
+  <div class="product-grid">
+    <div class="product-image">
+      <a href="#" class="image">
+        <img class="pic-1" src="{{uploadsUrl}}/{{product?.image}}">
+        <img class="pic-2" src="{{uploadsUrl}}/{{product?.image}}">
+      </a>
+      <!-- <span class="product-sale-label">hot</span> -->
+      <span *ngIf="product?.quantity == 0" class="product-discount-label text-uppercase">Sold Out</span>
+    </div>
 
-                <div class="product-content">
-                    <h3 class="title"><a href="#">Men's Blazer</a></h3>
+    <div class="product-content">
+      <h3 class="title"><a href="#">{{product?.name}}</a></h3>
 
-                    <ul class="rating">
-                       <li class="fas fa-star"></li>
-                       <li class="fas fa-star"></li>
-                       <li class="fas fa-star"></li>
-                       <li class="fas fa-star"></li>
-                       <li class="fas fa-star disable"></li>
-                    </ul>
-                    <div class="price"> $20.00</div>
-                </div>
-            </div>
+      <ul class="rating">
+        <div *ngIf="product">
+          <ngb-rating [max]="5" [(rate)]="product.rating" [readonly]="true"></ngb-rating> ({{product.total_reviews}})
+        </div>
+        <!-- <li class="fas fa-star"></li>
+                <li class="fas fa-star"></li>
+                <li class="fas fa-star"></li>
+                <li class="fas fa-star"></li>
+                <li class="fas fa-star disable"></li> -->
+      </ul>
+
+      <div class="price"> ${{product?.price}}</div>
+      <button *ngIf="!isAdmin" class="btn main-blue m-2" routerLink="/products/{{product?.id}}">Show
+        more</button>
+      <button *ngIf="isAdmin" class="btn btn-primary m-2"
+        routerLink="/admin/products/edit/{{product?.id}}">Edit</button>
+      <button *ngIf="isAdmin" class="btn btn-danger" (click)="open(content)">
+        Delete
+      </button>
+    </div>
+  </div>
 </div>
+
+
+<!--delete modal-->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Delete Product</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <div>Are you sure you want to delete this product?</div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.close('cancel')">
+      Cancel
+    </button>
+
+    <button type="button" class="btn btn-danger" (click)="delete()" [disabled]="isDeleteLoading">
+      <img *ngIf="isDeleteLoading" src="{{ loadingGifUrl }}" width="22px" />
+      <span *ngIf="!isDeleteLoading">Delete</span>
+    </button>
+  </div>
+</ng-template>

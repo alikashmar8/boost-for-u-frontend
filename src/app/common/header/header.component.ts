@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
   currentUser: User | null;
   isAdmin: boolean= false;
   isHome: boolean = false;
+  marginTop : number = 0;
 
   constructor(
     private authService: AuthService,
@@ -23,6 +24,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.isAdmin = this.authService.isAdmin();
+    if(this.isAdmin) this.marginTop = -50;
   }
 
   isCurrentRoute(param: string) {

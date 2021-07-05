@@ -4,7 +4,7 @@
     <div class="container">
       <a class="navbar-brand" href="index.html">
         <h2>
-          <img src="assets/images/boostforu-logo.png" > 
+          <img src="assets/images/boostforu-logo.png" >
         </h2>
       </a>
       <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"
@@ -14,13 +14,13 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <!--          Admin menu-->
-          <li class="nav-item" *ngIf="isAdmin">
+          <li class="nav-item" [ngClass]="isCurrentRoute('/admin/products') ? 'active': '' " *ngIf="isAdmin">
             <a class="nav-link" routerLink="/admin/products">All Products</a>
           </li>
-          <li class="nav-item" *ngIf="isAdmin">
+          <li class="nav-item" [ngClass]="isCurrentRoute('/admin/categories') ? 'active': '' " *ngIf="isAdmin">
             <a class="nav-link" routerLink="/admin/categories">All Categories</a>
           </li>
-          <li class="nav-item" *ngIf="isAdmin">
+          <li class="nav-item" [ngClass]="isCurrentRoute('/admin/orders') ? 'active': '' " *ngIf="isAdmin">
             <a class="nav-link" routerLink="/admin/orders">All Orders</a>
           </li>
 

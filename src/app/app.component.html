@@ -1,90 +1,12 @@
-<app-header></app-header>
-
-<!-- BEGIN content_for_index -->
-<!-- <div class="shopify-section index-section" id="shopify-section-1573040477871">
-
-    <div class="text-center" data-section-id="1573040477871" data-section-type="featured-content-section">
-
-      <div class="page-width">
-        <div class="grid">
-          <div class="grid__item">
-
-            <h2>PERFORMANCE</h2>
-
-
-            <div class="rte">
-              <div class="enlarge-text">
-                <p>Our performance&nbsp;dietry supplements offer you the perfect blend of essential nutrients, vitamins,
-                  minerals and amino acids to boost each part of your day when you need it the most.</p>
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-  </div>
-  <div class="shopify-section" id="shopify-section-1573040581690">
-    <style data-shopify="">
-      .newsletter-1573040581690 {
-        background-color: #ffffff;
-        color: #1c1d1d;
-      }
-
-      .newsletter-1573040581690 .input-group-btn {
-        background-color: #ffffff;
-      }
-    </style>
-
-    <div class="newsletter-section newsletter-1573040581690 newsletter-section--with-divider">
-      <div class="page-width text-center">
-
-        <h2 class="h3">More Power In Your Mailbox</h2>
-
-
-        <div class="rte"><p>Register Now To Get Special Deals, And A 15% Discount Code</p></div>
-
-
-        <form accept-charset="UTF-8" action="/contact#newsletter-1573040581690" class="contact-form"
-              id="newsletter-1573040581690" method="post"><input name="form_type" type="hidden" value="customer"><input
-          name="utf8" type="hidden" value="✓">
-
-
-          <label class="hidden-label" for="Email-1573040581690">Enter your email</label>
-          <input name="contact[tags]" type="hidden" value="prospect,newsletter">
-          <input name="contact[context]" type="hidden" value="section">
-          <div class="input-group newsletter__input-group">
-            <input autocapitalize="off" autocorrect="off" class="input-group-field newsletter__input" id="Email-1573040581690" name="contact[email]"
-                   placeholder="Enter your email" type="email" value="">
-            <span class="input-group-btn">
-      <button class="btn" name="commit" type="submit">
-        <span class="form__submit--large">Subscribe</span>
-        <span class="form__submit--small">
-          <svg aria-hidden="true" class="icon icon--wide icon-arrow-right" focusable="false" role="presentation"
-               viewBox="0 0 50 15"><path d="M0 9.63V5.38h35V0l15 7.5L35 15V9.63z"></path></svg>
-        </span>
-      </button>
-    </span>
-          </div>
-        </form>
-
-      </div>
-    </div>
-
-
-  </div>
-  <div class="shopify-section index-section" id="shopify-section-1573042526156">
-    <div data-arrows-color="" data-button-color="" data-caraousel-loaded="true" data-dots-color="" data-max-width="1920"
-         data-product-ids="3884656132144" data-show-more="true" id="looxCarousel" style="height: 482px;">
-      <iframe height="482px"
-              id="looxCarouselFrame"
-              scrolling="no" src="https://loox.io/widget/VyZxxYij9P/carousel?frame_id=looxCarouselFrame&amp;h=1573117949022&amp;show_more_btn=true&amp;max_width=1920&amp;productIds=3884656132144" style="display: block; border: 0px; overflow: hidden; height: 482px; width: 100%;"
-              width="100%"></iframe>
-    </div>
-  </div>END content_for_index -->
-<app-section1></app-section1>
-<router-outlet></router-outlet>
-<!-- <app-footer></app-footer> -->
+<div class="announcement d-flex justify-content-center">
+  <span class="announcement__text announcement__text--open m-2" data-text="🌎worldwide-shipping-now-available">
+    🌎Worldwide Shipping now Available!
+  </span>
+</div>
+<app-header class="container" *ngIf="!isLoginPage()" ></app-header>
+<!-- <div class="" style="margin-top: 00px; position: relative;"> -->
+  <div class="my-5">
+  <app-alert></app-alert>
+  <router-outlet></router-outlet>
+</div>
+<app-footer *ngIf="!isLoginPage()"></app-footer>

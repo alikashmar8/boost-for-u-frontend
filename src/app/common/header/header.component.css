@@ -1,0 +1,19 @@
+.announcement {
+    position: relative;
+    overflow: hidden;
+    background-color: #3c93bb;
+    color: #fff;
+    max-height: 100px;
+    transition: max-height .3s cubic-bezier(0, 0, .38, 1);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: 29;
+}
+
+*, :after, :before, input {
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
+}
