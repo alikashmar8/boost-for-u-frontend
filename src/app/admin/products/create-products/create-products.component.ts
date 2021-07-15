@@ -84,7 +84,7 @@ export class CreateProductsComponent implements OnInit {
     data.append('price', this.form.value.price);
     data.append('rating', this.form.value.rating);
     data.append('category_id', this.form.value.category);
-    data.append('image', this.file, this.file.name);
+    data.append('photo', this.file, this.file.name);
 
     this.productsService.store(data).subscribe(
       (res) => {

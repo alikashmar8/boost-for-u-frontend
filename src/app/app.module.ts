@@ -1,3 +1,4 @@
+import { StripeCheckoutComponent } from './cards/stripe-checkout/stripe-checkout.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -30,6 +31,7 @@ import { LoadingScreenComponent } from './common/loading-screen/loading-screen.c
 import { ProductsComponent } from './pages/products/products.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { ShowProductComponent } from './pages/show-product/show-product.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
     EditCategoriesComponent,
     ProductsComponent,
     ContactUsComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    ShowProductComponent,
+    StripeCheckoutComponent
   ],
   imports: [
     BrowserModule,

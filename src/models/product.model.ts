@@ -9,5 +9,6 @@ export class Product {
   total_reviews?: number;
   rating: number;
   image: string;
-  category: Category;
+  category?: Category;
+  category_id: string;
 }

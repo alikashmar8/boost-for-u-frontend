@@ -43,8 +43,8 @@ export class ProductsComponent implements OnInit {
   filterByCategory() {
     console.log(this.allProducts);
     if (this.searchCategory > 0) {
-      this.products = this.allProducts.filter((product) => { 
-        if (product.category.id == this.searchCategory) {
+      this.products = this.allProducts.filter((product) => {
+        if (product.category_id == this.searchCategory) {
           return product;
         }
       });

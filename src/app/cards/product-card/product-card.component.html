@@ -1,9 +1,9 @@
 <div class="container">
   <div class="product-grid">
-    <div class="product-image">
-      <a href="#" class="image">
-        <img class="pic-1" src="{{uploadsUrl}}/{{product?.image}}">
-        <img class="pic-2" src="{{uploadsUrl}}/{{product?.image}}">
+    <div class="product-image" >
+      <a href="#" class="image" >
+        <img class="pic-1" src="{{uploadsUrl}}/{{product?.image}}"  style='height: 100%; width: 100%;'>
+        <img class="pic-2" src="{{uploadsUrl}}/{{product?.image}}"  style='height: 100%; width: 100%;'>
       </a>
       <!-- <span class="product-sale-label">hot</span> -->
       <span *ngIf="product?.quantity == 0" class="product-discount-label text-uppercase">Sold Out</span>

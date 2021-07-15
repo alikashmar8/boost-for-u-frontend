@@ -2,15 +2,15 @@
 <div *ngIf="!isLoading">
   <div class="m-5 row">
     <div class="col-md-6 mx-5" style="margin-top: 70px">
-      <h1><strong>All Products:</strong></h1>
+      <h1>All Products:</h1>
     </div>
     <div class="col-md-4 mx-5"></div>
   </div>
   <div *ngIf="allProducts[0]">
     <div class="row m-5">
-      <div class="col-md-4 ml-5 h4"><strong>Products found : {{ products.length }}</strong></div>
+      <div class="col-md-4 ml-5">Products found : {{ products.length }}</div>
       <div class="col-md-2 mx-auto">
-        <!-- <select
+        <select
           class="form-control-sm"
           [(ngModel)]="searchCategory"
           (ngModelChange)="filterByCategory()"
@@ -19,16 +19,25 @@
           <option *ngFor="let category of categories" [value]="category.id">
             {{ category.name }}
           </option>
-        </select> -->
+        </select>
       </div>
       <div class="col-md-4 float-right">
-        <input type="text" [(ngModel)]="search" name="search" placeholder="Search Products" />
+        <input
+          type="text"
+          [(ngModel)]="search"
+          name="search"
+          placeholder="Search Products"
+        />
       </div>
     </div>
     <div class="latest-products">
       <div class="container">
         <div class="row">
-          <div class="col-md-4" style="display: inline-block" *ngFor="let product of products | filter: search">
+          <div
+            class="col-md-4"
+            style="display: inline-block"
+            *ngFor="let product of products | filter: search"
+          >
             <div class="product-item">
               <app-product-card [product]="product"></app-product-card>
             </div>

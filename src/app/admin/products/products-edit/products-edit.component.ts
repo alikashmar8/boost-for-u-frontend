@@ -53,7 +53,7 @@ export class ProductsEditComponent implements OnInit {
       (res: any) => {
         console.log(res);
         this.product = res;
-        this.categoryId = this.product.category.id
+        this.categoryId = this.product.category_id
         this.categoriesService.getAll().subscribe((res: any) => {
           this.categories = res;
           this.isLoading = false;
@@ -87,17 +87,15 @@ export class ProductsEditComponent implements OnInit {
   update() {
     this.isUpdateLoading = true;
     this.alertService.clear();
-    console.log(this.product.name);
-    console.log(this.product.quantity);
-    console.log(this.product.price);
-    console.log(this.product.description);
+    console.log(this.product);
+
     if (
       this.form.invalid ||
       !this.product.name ||
       !this.product.quantity ||
       !this.product.price ||
       !this.product.description ||
-      !this.product.category
+      !this.product.category_id
     ) {
       this.isUpdateLoading = false;
       this.alertService.error('Check all values before submitting');
@@ -111,7 +109,7 @@ export class ProductsEditComponent implements OnInit {
     data.append('price', this.product.price + '');
     data.append('category_id', this.categoryId + '');
     if (this.isPhotoChanged) {
-      data.append('image', this.file, this.file.name);
+      data.append('photo', this.file, this.file.name);
     }
 
     this.productsService.update(this.productId, data).subscribe(

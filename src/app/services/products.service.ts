@@ -31,7 +31,7 @@ export class ProductsService {
   }
 
   update(id: string, data: any) {
-    return this.http.put(`${apiUrl}/products/${id}`, data);
+    return this.http.post(`${apiUrl}/products/${id}`, data);
   }
 
   delete(id: string) {

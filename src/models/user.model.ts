@@ -1,3 +1,4 @@
+import { UserRole } from './../enums/userRoles.enum';
 export class User {
   id?: number;
   firstName?: string;
@@ -5,5 +6,5 @@ export class User {
   email?: string;
   password?: string;
   access_token?: string;
-  role?: number;
+  role?: UserRole;
 }
