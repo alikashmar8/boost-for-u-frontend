@@ -39,7 +39,6 @@ export class OrdersComponent implements OnInit {
     this.isLoading = true;
     this.ordersService.getAll().subscribe((res: any) => {
       this.orders = res;
-      console.log(res);
       this.isLoading = false;
     });
   }

@@ -1,3 +1,4 @@
+import { OrdersComponent } from './admin/orders/orders.component';
 import { StripeCheckoutComponent } from './cards/stripe-checkout/stripe-checkout.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
@@ -32,6 +33,9 @@ import { ProductsComponent } from './pages/products/products.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ShowProductComponent } from './pages/show-product/show-product.component';
+import { ShowOrderComponent } from './admin/show-order/show-order.component';
+import { MatSelectModule } from '@angular/material/select';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -60,7 +64,10 @@ import { ShowProductComponent } from './pages/show-product/show-product.componen
     ContactUsComponent,
     AboutUsComponent,
     ShowProductComponent,
-    StripeCheckoutComponent
+    StripeCheckoutComponent,
+    OrdersComponent,
+    ShowOrderComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -71,6 +78,8 @@ import { ShowProductComponent } from './pages/show-product/show-product.componen
     Ng2SearchPipeModule,
     HttpClientModule,
     NgbModule,
+    NoopAnimationsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,3 +1,4 @@
+import { OrdersComponent } from './admin/orders/orders.component';
 import { ShowProductComponent } from './pages/show-product/show-product.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -15,6 +16,7 @@ import { AnonymousGuardService } from './guards/anonymous-guard.service';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { ProductsComponent } from './pages/products/products.component';
+import { ShowOrderComponent } from './admin/show-order/show-order.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -65,6 +67,14 @@ const routes: Routes = [
           },
         ],
       },
+      {
+        path: 'orders',
+        component: OrdersComponent
+      },
+      {
+        path: 'orders/:id',
+        component: ShowOrderComponent
+      }
     ],
     canActivate: [AdminGuardService],
   },

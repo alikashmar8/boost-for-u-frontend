@@ -1,3 +1,5 @@
+import { OrderStatus } from './../enums/orderStatus.enum';
+import { PaymentTypesEnum } from 'src/enums/paymentTypes.enum';
 import { Product } from './product.model';
 // import { PaymentTypesEnum } from '../enums/payment-types.enum';
 
@@ -7,10 +9,10 @@ export class Order {
   address?: string;
   email?: string;
   phone_number?: string;
-  // payment_type: PaymentTypesEnum;
+  payment_type: PaymentTypesEnum;
+  status: OrderStatus;
   zip_code?: string;
   notes?: string;
-  product?: Product;
-  product_id?: string;
-  create_at?: Date;
+  products?: Product[];
+  created_at?: Date;
 }

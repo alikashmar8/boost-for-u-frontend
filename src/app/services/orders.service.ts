@@ -9,6 +9,10 @@ import { PaymentTypesEnum } from 'src/enums/paymentTypes.enum';
 export class OrdersService {
   constructor(private http: HttpClient) {}
 
+  getAll() {
+    return this.http.get(`${apiUrl}/orders`);
+  }
+
   store(data: {
     name: string;
     email: string | undefined;
@@ -19,9 +23,18 @@ export class OrdersService {
     payment_type: PaymentTypesEnum | undefined;
     product_id: string;
   }) {
-    return this.http.post(
-      `${apiUrl}/orders`,
-      data,
-    );
+    return this.http.post(`${apiUrl}/orders`, data);
+  }
+
+  delete(id: string) {
+    return this.http.delete(`${apiUrl}/orders/${id}`);
+  }
+
+  getById(id: string) {
+    return this.http.get(`${apiUrl}/orders/${id}`);
+  }
+
+  updateStatus(id: string, status: any) {
+    return this.http.post(`${apiUrl}/orders/${id}/updateStatus`, {status});
   }
 }

@@ -17,11 +17,12 @@
       <thead>
         <tr>
           <th scope="col">Action</th>
+          <th scope="col">Status</th>
           <th scope="col">Id</th>
           <th scope="col">Customer Name</th>
           <th scope="col">Email</th>
           <th scope="col">Phone Number</th>
-          <th scope="col">Product</th>
+          <!-- <th scope="col">Product</th> -->
           <th scope="col">Address</th>
           <th scope="col">Payment Type</th>
           <th scope="col">Zip Code</th>
@@ -32,15 +33,14 @@
       <tbody>
         <tr *ngFor="let order of orders | filter: search; index as i">
           <td>
-            <img
-              src="assets/images/delete_icon.png"
-              width="20"
-              style="margin-left: 10px"
-              alt="delete"
-              (click)="open(content, order.id)"
-            />
+            <img src="assets/images/delete_icon.png" width="20" style="margin-left: 10px" alt="delete"
+              (click)="open(content, order.id)" />
           </td>
-          <th scope="row">{{ order.id }}</th>
+          <td
+            [ngClass]="{'bg-warning': order.status === 'PENDING', 'bg-success' : order.status === 'DELIVERED', 'bg-danger': order.status == 'REJECTED' }">
+            {{order.status}}
+          </td>
+          <th scope="row"><a [routerLink]="'/admin/orders/'+order.id">{{ order.id }}</a></th>
           <td>
             {{ order.name }}
           </td>
@@ -50,11 +50,11 @@
           <td>
             {{ order.phone_number }}
           </td>
-          <td>
-            <a [routerLink]="'/products/' + order.product.id">
+          <!-- <td> -->
+          <!-- <a [routerLink]="'/products/' + order.product.id">
               {{ order.product.name }}
-            </a>
-          </td>
+            </a> -->
+          <!-- </td> -->
           <td>
             {{ order.address }}
           </td>
@@ -75,7 +75,9 @@
     </table>
   </div>
   <div *ngIf="!orders[0]">
-    <div class="aler alert-danger"><h4>No orders available!</h4></div>
+    <div class="aler alert-danger">
+      <h4>No orders available!</h4>
+    </div>
   </div>
 </div>
 
@@ -83,12 +85,7 @@
 <ng-template #content let-modal>
   <div class="modal-header mt-5">
     <h4 class="modal-title" id="modal-basic-title">Delete Order</h4>
-    <button
-      type="button"
-      class="close btn"
-      aria-label="Close"
-      (click)="modal.dismiss('Cross click')"
-    >
+    <button type="button" class="close btn" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
@@ -100,20 +97,11 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button
-      type="button"
-      class="btn btn-secondary"
-      (click)="modal.close('cancel')"
-    >
+    <button type="button" class="btn btn-secondary" (click)="modal.close('cancel')">
       Cancel
     </button>
 
-    <button
-      type="button"
-      class="btn btn-danger"
-      (click)="delete()"
-      [disabled]="isDeleteLoading"
-    >
+    <button type="button" class="btn btn-danger" (click)="delete()" [disabled]="isDeleteLoading">
       <img *ngIf="isDeleteLoading" src="{{ loadingGifUrl }}" width="22px" />
       <span *ngIf="!isDeleteLoading">Delete</span>
     </button>
