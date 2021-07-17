@@ -36,6 +36,11 @@ import { ShowProductComponent } from './pages/show-product/show-product.componen
 import { ShowOrderComponent } from './admin/show-order/show-order.component';
 import { MatSelectModule } from '@angular/material/select';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { RequestPersonalDataComponent } from './pages/request-personal-data/request-personal-data.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { ShippingPolicyComponent } from './pages/shipping-policy/shipping-policy.component';
+import { TermsOfServicesComponent } from './pages/terms-of-services/terms-of-services.component';
+import { RefundPolicyComponent } from './pages/refund-policy/refund-policy.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +72,11 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     StripeCheckoutComponent,
     OrdersComponent,
     ShowOrderComponent,
+    RequestPersonalDataComponent,
+    PrivacyPolicyComponent,
+    ShippingPolicyComponent,
+    TermsOfServicesComponent,
+    RefundPolicyComponent,
 
   ],
   imports: [

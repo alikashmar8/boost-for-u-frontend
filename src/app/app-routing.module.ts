@@ -1,3 +1,8 @@
+import { RefundPolicyComponent } from './pages/refund-policy/refund-policy.component';
+import { TermsOfServicesComponent } from './pages/terms-of-services/terms-of-services.component';
+import { ShippingPolicyComponent } from './pages/shipping-policy/shipping-policy.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { RequestPersonalDataComponent } from './pages/request-personal-data/request-personal-data.component';
 import { OrdersComponent } from './admin/orders/orders.component';
 import { ShowProductComponent } from './pages/show-product/show-product.component';
 import { NgModule } from '@angular/core';
@@ -97,6 +102,11 @@ const routes: Routes = [
 
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'about-us', component: AboutUsComponent },
+  { path: 'request-personal-data', component: RequestPersonalDataComponent },
+  { path: 'privacy-policy', component: PrivacyPolicyComponent },
+  { path: 'shipping-policy', component: ShippingPolicyComponent },
+  { path: 'terms-of-service', component: TermsOfServicesComponent },
+  { path: 'refund-policy', component: RefundPolicyComponent },
 ];
 
 @NgModule({

@@ -8,6 +8,9 @@ import { AuthService } from './auth.service';
   providedIn: 'root',
 })
 export class ProductsService {
+  getProductsByNumber(number: number) {
+    return this.http.get(`${apiUrl}/products/count/${number}`);
+  }
   currentUser: User | null;
 
   constructor(private http: HttpClient, private authService: AuthService) {
