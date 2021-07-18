@@ -8,10 +8,10 @@
         </h2>
       </a>
       <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"
-        class="navbar-toggler" data-target="#navbarResponsive" data-toggle="collapse" type="button">
+        class="navbar-toggler" data-target="#navbarResponsive" data-toggle="collapse" type="button" (click)="sidebarToggle()" >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
+      <div class="collapse navbar-collapse" id="navbarResponsive" [class.show]="isShowSidebar">
         <ul class="navbar-nav ml-auto">
           <!--          Admin menu-->
           <li class="nav-item" [ngClass]="isCurrentRoute('/admin/products') ? 'active': '' " *ngIf="isAdmin">

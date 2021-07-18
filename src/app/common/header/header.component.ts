@@ -13,6 +13,8 @@ export class HeaderComponent implements OnInit {
   isAdmin: boolean= false;
   isHome: boolean = false;
   marginTop : number = 0;
+  isShowSidebar: boolean = false;
+
 
   constructor(
     private authService: AuthService,
@@ -36,4 +38,8 @@ export class HeaderComponent implements OnInit {
     this.authService.currentUserSubject.next(null);
     this.router.navigate(['/']).then(() => window.location.reload());
   }
+
+  sidebarToggle(){
+    this.isShowSidebar = !this.isShowSidebar;
+}
 }
