@@ -3,7 +3,7 @@
 <main class="container" *ngIf="!isLoading">
   <!-- Left Column / Headphones Image -->
   <div class="left-column">
-    <img src="{{ uploadsUrl }}/{{ product.image }}" alt="Product Image" style="max-height: 100%" />
+    <img src="{{ uploadsUrl }}/{{ product.image }}" alt="Product Image" style="max-height: 100%; object-fit: contain;" />
   </div>
 
   <!-- Right Column -->
