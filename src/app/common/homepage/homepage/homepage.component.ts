@@ -17,8 +17,6 @@ export class HomepageComponent implements OnInit {
     this.isLoading = true;
     this.productsService.getProductsByNumber(4).subscribe((res: any)=>{
       this.products = res;
-      console.log(this.products);
-
       this.isLoading = false;
     }, (err: any)=> {
       console.log(err);

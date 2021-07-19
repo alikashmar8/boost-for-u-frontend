@@ -59,10 +59,15 @@ export class ContactUsComponent implements OnInit {
         this.email = '';
         this.subject = '';
         this.message = '';
-        (this.company = ''), (this.mobile = '');
+        this.company = '';
+        this.mobile = '';
+        console.log(data);
         this.isSendingEmail = false;
       },
-      (error) => console.log(error)
+      (error) => {
+        console.log(error);
+        this.isSendingEmail = false;
+      }
     );
   }
 }

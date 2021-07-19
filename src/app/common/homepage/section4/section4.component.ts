@@ -13,8 +13,6 @@ export class Section4Component implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.products);
-
   }
 
 }

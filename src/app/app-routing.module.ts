@@ -74,12 +74,12 @@ const routes: Routes = [
       },
       {
         path: 'orders',
-        component: OrdersComponent
+        component: OrdersComponent,
       },
       {
         path: 'orders/:id',
-        component: ShowOrderComponent
-      }
+        component: ShowOrderComponent,
+      },
     ],
     canActivate: [AdminGuardService],
   },
@@ -110,7 +110,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

@@ -1,7 +1,7 @@
 <div class="container">
   <div class="product-grid">
     <div class="product-image" >
-      <a href="#" class="image" >
+      <a routerLink="/products/{{product?.id}}" class="image" >
         <img class="pic-1" src="{{uploadsUrl}}/{{product?.image}}"  style='height: 100%; width: 100%;'>
         <img class="pic-2" src="{{uploadsUrl}}/{{product?.image}}"  style='height: 100%; width: 100%;'>
       </a>
@@ -10,7 +10,7 @@
     </div>
 
     <div class="product-content">
-      <h3 class="title"><a href="#">{{product?.name}}</a></h3>
+      <h3 class="title"><a routerLink="/products/{{product?.id}}">{{product?.name}}</a></h3>
 
       <ul class="rating">
         <div *ngIf="product">

@@ -183,7 +183,7 @@ html, body {
 }
 
 /* Responsive */
-@media (max-width: 940px) {
+@media (max-width: 450px) {
   .container {
     flex-direction: column;
     margin-top: 60px;
@@ -212,4 +212,8 @@ html, body {
 ::ng-deep .my-class .modal-dialog {
   max-width: 80%;
   width: 80%;
+  position: relative;
+  top: 30%;
+  /* left: 10%; */
+  transform: translateY(-50%);
 }

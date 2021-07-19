@@ -46,7 +46,6 @@ export class ShowProductComponent implements OnInit {
     this.productId = this.route.snapshot.paramMap.get('id') || '';
     this.productsService.getById(this.productId).subscribe(
       (res: any) => {
-        console.log(res);
         this.product = res;
         // TODO PAYPAL CONFIG
         // render({

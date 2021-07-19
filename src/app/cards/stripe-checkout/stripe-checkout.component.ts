@@ -32,7 +32,7 @@ export class StripeCheckoutComponent implements OnInit {
       shippingAddress: true,
       billingAddress: true,
       currency: 'USD',
-      amount: this.product.price * 100,
+      amount: this.product.price,
       name: this.product.name,
       source: async (source: any) => {
         this.loading = true;
@@ -46,7 +46,7 @@ export class StripeCheckoutComponent implements OnInit {
 
   async checkout(e: any) {
     this.handler.open({
-      amount: this.product.price,
+      amount: this.product.price * 100,
       name: this.product.name,
       currency: 'USD',
       shippingAddress: true,

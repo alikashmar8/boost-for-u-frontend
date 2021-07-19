@@ -22,6 +22,10 @@ export class HeaderComponent implements OnInit {
     private route: ActivatedRoute
   ) {
     this.currentUser = authService.currentUser;
+    router.events.subscribe((val) => {
+      this.isShowSidebar = false
+  });
+
   }
 
   ngOnInit(): void {
