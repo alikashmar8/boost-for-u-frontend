@@ -110,7 +110,8 @@
       </form>
     </div>
     <div *ngIf="selectedPayment.toLowerCase() == 'stripe'">
-      <app-stripe-checkout (newItemEvent)="handleStripeResponse($event)" [product]="product"></app-stripe-checkout>
+      <a href="{{apiBaseUrl}}checkout/{{product.id}}" class="btn btn-primary m-5">Buy with stripe</a>
+      <!-- <app-stripe-checkout (newItemEvent)="handleStripeResponse($event)" [product]="product"></app-stripe-checkout> -->
     </div>
     <div *ngIf="selectedPayment.toLowerCase() == 'paypal'">
       <div id="paypalButtons"></div>

@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
 import { Product } from '../../../models/product.model';
 
-// @ts-ignore
 declare var StripeCheckout: StripeCheckoutStatic;
 
 @Component({
@@ -15,7 +14,6 @@ export class StripeCheckoutComponent implements OnInit {
 
   @Input() product: Product;
 
-  // @ts-ignore
   handler: StripeCheckoutHandler;
 
   @Output() newItemEvent = new EventEmitter<any>();
@@ -26,7 +24,7 @@ export class StripeCheckoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.handler = StripeCheckout.configure({
-      key: 'pk_test_51HywjtC3KTL075dc7SinoPGVzLwNpsnyvTgklzfqRZk2AOiJPBOg9EuRuLH9fjs9lAOGx2cHdgl3FsCc7uvhrl9r00LV8rGkuB',
+      key: 'sk_test_51HywjtC3KTL075dcARHpuSgf8trC3awdHpWBgHYmfInB7nbYTSYNnHBlLRaOPFOffMODwAvpkjZB1kzjuRrFumxv00H2p0JX7t',
       locale: 'auto',
       zipCode: true,
       shippingAddress: true,
@@ -37,7 +35,7 @@ export class StripeCheckoutComponent implements OnInit {
       source: async (source: any) => {
         this.loading = true;
         // response details after payment
-        // console.log(source);
+        console.log(source);
         this.newItemEvent.emit(source);
         this.loading = false;
       },

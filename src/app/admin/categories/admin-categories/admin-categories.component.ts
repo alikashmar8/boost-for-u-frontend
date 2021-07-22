@@ -33,7 +33,7 @@ export class AdminCategoriesComponent implements OnInit {
   }
 
   open(content: any, categoryId?: string) {
-    this.modalService.open(content);
+    this.modalService.open(content, {windowClass: 'modal-global'});
     this.categoryId = categoryId;
   }
 

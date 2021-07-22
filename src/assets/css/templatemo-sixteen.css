@@ -1096,3 +1096,7 @@ footer .inner-content p a {
   background-color: #3c93bb!important;
   color: #fff!important;
 }
+
+.modal-global{
+  margin-top: 150px;
+}

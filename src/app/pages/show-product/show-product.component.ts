@@ -1,3 +1,4 @@
+import { apiBaseUrl } from './../../../constants';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -32,13 +33,15 @@ export class ShowProductComponent implements OnInit {
   creditCardType = PaymentTypesEnum.CREDIT_CARD;
   stripeType = PaymentTypesEnum.STRIPE;
   errorOrderText: string = '';
+  apiBaseUrl = apiBaseUrl;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private productsService: ProductsService,
     private alertService: AlertService,
     private ngbModal: NgbModal,
-    private ordersService: OrdersService
+    private ordersService: OrdersService,
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -56,6 +59,12 @@ export class ShowProductComponent implements OnInit {
         //     console.log(details);
         //   },
         // });
+        const success =
+          this.activatedRoute.snapshot.queryParamMap.get('success');
+        if (success)
+          this.alertService.success(
+            'Product ordered successfully, we will contact you soon'
+          );
         this.isLoading = false;
       },
       (error) => {
@@ -128,7 +137,7 @@ export class ShowProductComponent implements OnInit {
   }
 
   handleStripeResponse(data: any) {
-     this.isLoading = true;
+    this.isLoading = true;
     const userAddress =
       'country: ' +
       data.owner.address.country +
@@ -146,7 +155,7 @@ export class ShowProductComponent implements OnInit {
       payment_type: PaymentTypesEnum.STRIPE,
       product_id: this.productId,
     };
-    this.ordersService.store({...body, notes: undefined }).subscribe(
+    this.ordersService.store({ ...body, notes: undefined }).subscribe(
       (res) => {
         this.alertService.success(
           'Product ordered successfully, we will contact you soon'

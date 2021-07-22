@@ -41,6 +41,8 @@ import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.co
 import { ShippingPolicyComponent } from './pages/shipping-policy/shipping-policy.component';
 import { TermsOfServicesComponent } from './pages/terms-of-services/terms-of-services.component';
 import { RefundPolicyComponent } from './pages/refund-policy/refund-policy.component';
+import { StripeModule } from 'stripe-angular';
+import { NgxStripeModule } from 'ngx-stripe';
 
 @NgModule({
   declarations: [
@@ -89,7 +91,10 @@ import { RefundPolicyComponent } from './pages/refund-policy/refund-policy.compo
     HttpClientModule,
     NgbModule,
     NoopAnimationsModule,
-    MatSelectModule
+    MatSelectModule,
+    // NgxStripeModule.forChild(),
+    NgxStripeModule.forRoot('pk_test_51HywjtC3KTL075dc7SinoPGVzLwNpsnyvTgklzfqRZk2AOiJPBOg9EuRuLH9fjs9lAOGx2cHdgl3FsCc7uvhrl9r00LV8rGkuB'),
+
   ],
   providers: [],
   bootstrap: [AppComponent],
