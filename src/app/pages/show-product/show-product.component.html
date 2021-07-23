@@ -3,7 +3,8 @@
 <main class="container" *ngIf="!isLoading">
   <!-- Left Column / Headphones Image -->
   <div class="left-column">
-    <img src="{{ uploadsUrl }}/{{ product.image }}" alt="Product Image" style="max-height: 100%; object-fit: contain;" />
+    <img src="{{ uploadsUrl }}/{{ product.image }}" alt="Product Image"
+      style="max-height: 100%; object-fit: contain;" />
   </div>
 
   <!-- Right Column -->
@@ -19,14 +20,14 @@
     <div class="product-price">
       <span>{{ product.price }} $</span>
 
-      <a (click)="open(content)" class="btn btn-primary"><i class="fa fa-shopping-cart mx-1"></i>Buy now</a>
+      <a href="{{apiBaseUrl}}checkout/{{product.id}}" class="btn btn-primary"><i
+          class="fa fa-shopping-cart mx-1"></i>Order now</a>
+      <!-- <a (click)="open(content)" class="btn btn-primary"><i class="fa fa-shopping-cart mx-1"></i>Buy now</a> -->
     </div>
   </div>
 </main>
 
-<ng-template #content let-modal class="p-5" style=" position: absolute;
-
-;">
+<ng-template #content let-modal class="p-5" style=" position: absolute;">
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">
       <strong>Buy Product</strong>

@@ -44,9 +44,9 @@ export class LoginComponent implements OnInit {
       (res) => {
         this.isLoadingLogin = false
         console.log(res)
-        this.router.navigate(['/admin/home']).then(() => window.location.reload())
+        this.router.navigate(['/admin/products']).then(() => window.location.reload())
       },
-      (error) => {        
+      (error) => {
         Array.isArray(error.error.message) ?
           this.alertService.error(error.error.message[0]) :
           this.alertService.error(error.error.message)
